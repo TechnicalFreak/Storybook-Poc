@@ -1,0 +1,32 @@
+{
+  "name": "storybook-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start-css-dev-environment\" \"npm run start-storybook\"",
+    "start-storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build-css": "node-sass --include-path scss scss/main.scss   public/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "host-css": "http-server -p 5000 public/css",
+    "start-css-dev-environment": "concurrently \"npm run watch-css\" \"npm run host-css\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.4.13",
+    "@storybook/html": "^6.1.21",
+    "babel-loader": "^8.2.3",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "http-server": "^14.1.0"
+  }
+}
