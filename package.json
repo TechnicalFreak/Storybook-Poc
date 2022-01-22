@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run start-css-dev-environment\" \"npm run start-storybook\"",
-    "start-storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build-css": "node-sass --include-path scss scss/main.scss   public/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "host-css": "http-server -p 5000 public/css",
-    "start-css-dev-environment": "concurrently \"npm run watch-css\" \"npm run host-css\""
+    "start": "concurrently \"npm run start-live-convertion-scss-to-css\" \"npm run start-dev-storybook\"",
+
+    "start-dev-storybook": "start-storybook -p 6006",    
+    
+    "start-live-convertion-scss-to-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
+
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",

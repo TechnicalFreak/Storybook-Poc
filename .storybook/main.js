@@ -9,6 +9,5 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  framework: "@storybook/html",
-  staticDirs: ["../public/css"]
+  framework: "@storybook/html"
 };
